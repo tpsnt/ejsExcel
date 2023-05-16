@@ -1534,13 +1534,8 @@ function charToNum(str) {
 
 function date2Num(date) {
   var time = date.getTime();
-  var valTmp = time + 25567.33 * 86400000;
-  if(valTmp <= 60 * 86400000) {
-    valTmp++;
-  } else {
-    valTmp += 2 * 86400000;
-  }
-  return (valTmp - (date.getTimezoneOffset() * 600)) / 86400000;
+  var valTmp = time + 25569 * 86400000;
+  return (valTmp - (date.getTimezoneOffset() * 60 * 1000)) / 86400000;
 }
 
 exports.charPlus = charPlus;
